@@ -1,0 +1,11 @@
+{
+  "files.associations": {
+    "*.embeddedhtml": "html",
+    "iostream": "cpp",
+    "vector": "cpp",
+    "ratio": "cpp",
+    "ostream": "cpp",
+    "string": "cpp",
+    "__split_buffer": "cpp"
+  }
+}
