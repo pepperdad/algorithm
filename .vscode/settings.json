@@ -6,6 +6,7 @@
     "ratio": "cpp",
     "ostream": "cpp",
     "string": "cpp",
-    "__split_buffer": "cpp"
+    "__split_buffer": "cpp",
+    "deque": "cpp"
   }
 }
