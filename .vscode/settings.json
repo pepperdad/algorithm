@@ -7,6 +7,10 @@
     "ostream": "cpp",
     "string": "cpp",
     "__split_buffer": "cpp",
-    "deque": "cpp"
+    "deque": "cpp",
+    "queue": "cpp",
+    "__bit_reference": "cpp",
+    "ios": "cpp",
+    "__config": "cpp"
   }
 }

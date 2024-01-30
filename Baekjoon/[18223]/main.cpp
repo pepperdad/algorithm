@@ -2,20 +2,23 @@
 #include<iostream>
 #include<vector>
 #include<queue>
-#define MAX_N 1000+5
-#define endl "\n"
 #define FASTIO cin.tie(NULL); cout.tie(NULL); ios::sync_with_stdio(false);
+#define endl "\n"
 
 using namespace std;
 
 const int INF = 987654321;
 vector<pair<int,pair<int,int>>> graph;
-int dist[MAX_N];
-vector<int> v[MAX_N];
 priority_queue<pair<int,pair<int, int>>> pq;
+int dist[5005];
+vector<int> v[5005];
 vector<int> res;
+int V, E, P;
+bool flag = false;
 
-void dijikstra(int start){
+int dijikstra(int start, int end){
+    fill(&dist[0], &dist[5005 - 1], INF);
+
     dist[start] = 0;
 
     for (auto e : graph) {
@@ -30,7 +33,7 @@ void dijikstra(int start){
 		int prior = pq.top().second.first;
 		pq.pop();
 
-		if (dist[now] != INF) continue;
+		if (dist[now] != INF || dist[now] == cost) continue;
 		dist[now] = cost;
 		v[now].push_back(prior);
 
@@ -40,42 +43,33 @@ void dijikstra(int start){
 			}
 		}
 	}
+
+    return dist[end];
 }
 
-void printroute(int now) {
-	if(v[now].size() != 0 ){
-		printroute(v[now][0]);
-		res.push_back(now);
-	}
+int main(){
 
-	else res.push_back(now);
-}
-
-int main() {
     FASTIO
-    
-    fill(&dist[0], &dist[MAX_N - 1], INF);
 
-    int n, m, s, e;
-    cin >> n >> m;
-    
-    for(int i=0; i<m; i++){
-        int a, b, c;
-        cin >> a >> b >> c;
-        graph.push_back({a, {b, c}});
+    cin >> V >> E >> P;
+
+    if(P == 1){
+        cout << "SAVE HIM";
+        return 0;
     }
 
-    cin >> s >> e;
+    for(int i=0; i<E; i++){
+        int a, b, c;
+        cin >> a >> b >> c;
 
-    dijikstra(s);
-    cout << dist[e] << endl;
+        graph.push_back({a, {b, c}});
+        graph.push_back({b, {a, c}});
+    }
 
-    printroute(e);
-	cout << res.size() << endl;
-
-	for (int i = 0; i < res.size(); i++) {
-		cout << res[i] << " ";
-	}
+    if(dijikstra(1,P) + dijikstra(P,V) <= dijikstra(1,V)){
+        cout << "SAVE HIM";
+    }
+    else cout << "GOOD BYE";
 
     return 0;
 }
