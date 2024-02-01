@@ -1,7 +1,10 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<iostream>
 #include<vector>
+#include<algorithm>
 #include<queue>
+#include<string>
+#include<sstream>
 #define FASTIO cin.tie(NULL); cout.tie(NULL); ios::sync_with_stdio(false);
 #define endl "\n"
 
@@ -13,6 +16,5 @@ int main(){
 
     FASTIO
 
-    
     return 0;
 }

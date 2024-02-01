@@ -11,6 +11,14 @@
     "queue": "cpp",
     "__bit_reference": "cpp",
     "ios": "cpp",
-    "__config": "cpp"
+    "__config": "cpp",
+    "istream": "cpp",
+    "iosfwd": "cpp",
+    "__hash_table": "cpp",
+    "array": "cpp",
+    "bitset": "cpp",
+    "initializer_list": "cpp",
+    "string_view": "cpp",
+    "unordered_map": "cpp"
   }
 }
