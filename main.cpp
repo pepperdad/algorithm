@@ -5,6 +5,7 @@
 #include<queue>
 #include<string>
 #include<sstream>
+#include<cmath>
 #define FASTIO cin.tie(NULL); cout.tie(NULL); ios::sync_with_stdio(false);
 #define endl "\n"
 
